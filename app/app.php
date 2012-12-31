@@ -13,7 +13,7 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
         'dbhost' => 'localhost',
         'dbname' => 'silex_auth',
         'user' => 'root',
-        'password' => 'geeks2012',
+        'password' => '',
     ),
 ));
 $app->register(new Silex\Provider\SecurityServiceProvider());
