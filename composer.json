@@ -1,0 +1,23 @@
+{
+    "require": {
+        "silex/silex": "1.0.*",
+        "doctrine/dbal": "2.2",
+        "symfony/security": "2.1.*"
+    },
+    "require-dev": {
+        "symfony/dom-crawler"   : "2.1.*",
+        "symfony/css-selector"  : "2.1.*",
+        "symfony/browser-kit"   : "2.1.*"
+        
+    },
+
+"autoload": {
+"psr-0":
+{
+    "Provider": "src/",
+    "Provider\\Tests": "tests/"
+}
+},
+
+    "minimum-stability": "dev"
+}
