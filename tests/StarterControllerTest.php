@@ -8,7 +8,7 @@ use Silex\WebTestCase;
 /**
      * @group starter
      */
-class ClientControllerTest extends WebTestCase
+class StarterControllerTest extends WebTestCase
 {
     /**
      * @return mixed

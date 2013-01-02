@@ -1,10 +1,12 @@
 <?php
+
 namespace Provider\Controllers\Starter;
 
 use Silex\ControllerProviderInterface;
 use Silex\Application;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\Request;
+
 class StarterController implements ControllerProviderInterface {
 
     /**
@@ -19,7 +21,6 @@ class StarterController implements ControllerProviderInterface {
 
         //Get List
         $controllers->get('/starter', function()use ($app) {
-                
                     return $app->json('ok');
                 });
 
@@ -32,14 +33,14 @@ class StarterController implements ControllerProviderInterface {
 
         //Get Single
         $controllers->get('/starter/{id}', function($id)use ($app) {
-                  
+
                     return $app->json('ok');
                 });
 
 
         //Update 
         $controllers->put('/starter/{id}', function(Request $request, $id)use ($app) {
-                   
+
                     return $app->json('ok');
                 });
 
@@ -47,7 +48,7 @@ class StarterController implements ControllerProviderInterface {
         //Delete
         $controllers->delete('/starter/{id}', function($id)use ($app) {
 
-                  
+
                     return $app->json('delete client');
                 });
         return $controllers;

@@ -1,0 +1,36 @@
+{% extends 'layout.twig' %}
+{% block head_css %}
+<link rel="stylesheet" href="{{app.request.baseUrl}}/static/css/bootstrap.css">
+<link rel="stylesheet" href="{{app.request.baseUrl}}/static/css/app.css">
+{% endblock %}
+{% block header %}
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <a class="brand" href="#">Silex Kick Start</a>
+            <div class="nav-collapse collapse">
+
+               {% if is_granted('ROLE_USER') %}
+                <p class="navbar-text pull-right">Welcome {{ app.security.token.user.username }}!
+                    <a href="{{ path('logout') }}">Log out</a></p>
+               {% endif%}
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+{% raw %}
+<div ng-view></div>
+{% endraw %}
+{% endblock %}
+{% block bottom_scripts %}
+<script type="text/javascript" src="{{app.request.baseUrl}}/static/lib/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="{{app.request.baseUrl}}/static/lib/angular/angular.js"></script>
+<script type="text/javascript" src="{{app.request.baseUrl}}/static/js/app.js"></script>
+<script type="text/javascript" src="{{app.request.baseUrl}}/static/js/services.js"></script>
+<script type="text/javascript" src="{{app.request.baseUrl}}/static/js/controllers.js"></script>
+<script type="text/javascript" src="{{app.request.baseUrl}}/static/js/filters.js"></script>
+<script type="text/javascript" src="{{app.request.baseUrl}}/static/js/directives.js"></script>
+<script type="text/javascript" src="{{app.request.baseUrl}}/static/js/bootstrap.min.js"></script>
+{% endblock %}

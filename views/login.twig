@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{app.request.baseUrl}}/static/css/bootstrap.css">
+        <link rel="stylesheet" href="{{app.request.baseUrl}}/static/css/login.css">
+    </head>
+    <title>Silex Starter login</title>
+    <form  class="form-signin" action="{{ path('login_check') }}" method="post">
+        <h2 class="form-signin-heading">Please Login</h2>
+        <input id="username" type="text" name="_username" value="{{ last_username }}" 
+               class="input-block-level" placeholder="Enter Username">
+        <input id="password" type="password" name="_password" 
+               class="input-block-level" placeholder="Enter Password">
+        <input class="btn btn-primary" type="submit" value="Log in">
+        {% if error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+        </form>
+    </html>
