@@ -18,11 +18,12 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
     'db.options' => array(
         'driver' => 'pdo_mysql',
         'dbhost' => 'localhost',
-        'dbname' => 'silex_auth',
+        'dbname' => 'smartfarmer',
         'user' => 'root',
         'password' => 'geeks2012',
     ),
 ));
+
 $app->register(new Silex\Provider\SecurityServiceProvider(), array(
     'security.firewalls' => array(
         'foo' => array('pattern' => '^/foo'), // Example of an url available as anonymous user
@@ -39,6 +40,7 @@ $app->register(new Silex\Provider\SecurityServiceProvider(), array(
                     }),
         ),
     ),
+                            
     'security.access_rules' => array(
         // You can rename ROLE_USER as you wish
         array('^/.+$', 'ROLE_USER'),
@@ -64,4 +66,5 @@ $app->before(function (Request $request) use ($app) {
                 $request->request->replace(is_array($data) ? $data : array());
             }
         });
+$app->mount("/",new Provider\Controllers\Clients\ClientsController());
 return $app;
